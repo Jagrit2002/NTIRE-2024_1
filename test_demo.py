@@ -22,7 +22,7 @@ def select_model(args, device):
         # model_path = os.path.join('model_zoo', 'team00_rfdn.pth')
         # model = RFDN()
         # model.load_state_dict(torch.load(model_path), strict=True)
-
+        
         # # SwinIR baseline, ICCVW 2021
         # from models.team00_SwinIR import SwinIR
         # name, data_range = f"{model_id:02}_SwinIR_baseline", 1.0
@@ -31,10 +31,16 @@ def select_model(args, device):
         # model.load_state_dict(torch.load(model_path), strict=True)
 
         # DAT baseline, ICCV 2023
-        from models.team00_DAT import DAT
-        name, data_range = f"{model_id:02}_DAT_baseline", 1.0
-        model_path = os.path.join('model_zoo', 'team00_dat.pth')
-        model = DAT()
+        # from models.team00_DAT import DAT
+        # name, data_range = f"{model_id:02}_DAT_baseline", 1.0
+        # model_path = os.path.join('model_zoo', 'team00_dat.pth')
+        # model = DAT()
+        
+        # IG_MSA
+        from models.team08_IG_MSA import MyNetwork
+        name, data_range = f"{model_id:08}_IG_MSA", 1.0
+        model_path = os.path.join('model_zoo', 'team08_IG_MSA.pth')
+        model = MyNetwork()
         model.load_state_dict(torch.load(model_path), strict=True)
     else:
         raise NotImplementedError(f"Model {model_id} is not implemented.")
