@@ -36,7 +36,7 @@ def select_model(args, device):
         model_path = os.path.join('model_zoo', 'team00_dat.pth')
         model = DAT()
         
-    elif model_id == 08:
+    elif model_id == 8:
         # IG_MSA
         from models.team08_IG_MSA import MyNetwork
         name, data_range = f"{model_id:08}_IG_MSA", 1.0
