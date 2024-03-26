@@ -30,7 +30,7 @@ def select_model(args, device):
         # model.load_state_dict(torch.load(model_path), strict=True)
     if model_id == 0:
 
-        DAT baseline, ICCV 2023
+        #DAT baseline, ICCV 2023
         from models.team00_DAT import DAT
         name, data_range = f"{model_id:02}_DAT_baseline", 1.0
         model_path = os.path.join('model_zoo', 'team00_dat.pth')
